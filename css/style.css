@@ -5,6 +5,7 @@
 :root {
     /* Light Theme (Default) */
     --bg-main: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.9);
     --text-primary: #111111;
     --text-secondary: #555555;
     --text-tertiary: #888888;
@@ -22,6 +23,7 @@
 [data-theme="dark"] {
     /* Dark Theme */
     --bg-main: #121212;
+    --bg-header: rgba(18, 18, 18, 0.9);
     --text-primary: #eeeeee;
     --text-secondary: #a0a0a0;
     --text-tertiary: #777777;
@@ -37,7 +39,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: auto !important;
 }
 
 html {
@@ -86,14 +87,15 @@ ul {
    HEADER & NAV
    ========================================= */
 .header {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
-    background-color: rgba(var(--bg-main), 0.9);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 100;
-    transition: background-color 0.3s ease;
+    background-color: var(--bg-header);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar {
@@ -104,13 +106,25 @@ ul {
 
 
 
+.nav-left,
+.nav-right {
+    flex: 1;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    flex: 2;
+    justify-content: center;
 }
 
 .nav-links a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 500;
 }
@@ -124,8 +138,10 @@ ul {
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-size: 1.75rem;
-    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
     margin-left: auto;
@@ -374,5 +390,9 @@ ul {
     .nav-links {
         display: none;
         /* simple mobile view, keep it minimal */
+    }
+
+    .nav-left {
+        display: none;
     }
 }

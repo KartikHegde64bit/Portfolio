@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggling Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
 
     // Check for saved theme preference or use OS preference
     const savedTheme = localStorage.getItem('theme');
@@ -39,10 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
 
-        if (theme === 'dark') {
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        if (iconSun && iconMoon) {
+            if (theme === 'dark') {
+                iconMoon.style.display = 'none';
+                iconSun.style.display = 'block';
+            } else {
+                iconSun.style.display = 'none';
+                iconMoon.style.display = 'block';
+            }
         }
     }
 });
