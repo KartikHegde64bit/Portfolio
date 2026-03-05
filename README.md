@@ -1,23 +1,15 @@
-# Kartik S Hegde - Portfolio Website
+# Kartik S Hegde - Minimalist Portfolio
 
-A sleek, premium, dark-themed portfolio website built with Vanilla HTML, CSS, and JS.
+A clean, minimalist portfolio website supporting both Light and Dark modes.
 
-## Technologies Used
+## Tech Stack
 - Semantic HTML5
-- Modern CSS (Flexbox, Grid, Custom Properties/Variables, Animations)
-- Vanilla JavaScript (Intersection Observer, custom cursor, DOM manipulation)
+- Minimalist CSS with Custom Properties for Theming
+- Vanilla JavaScript for LocalStorage Theme Persistence
 
-## Features
-- **Responsive Design**: Mobile-first approach ensuring it looks great on all devices.
-- **Dark Theme**: Premium aesthetic with deep backgrounds, vibrant cyan/purple accents, and glassmorphism cards.
-- **Animations**: Scroll-reveal animations, floating blob backgrounds, and smooth transitions.
-- **Custom Cursor**: A stylized custom cursor for non-touch devices to enhance the digital feel.
-- **Performance**: Zero external UI libraries. Pure CSS and JS for maximum speed.
+## Deployment 
+This static site is optimized for one-click deployment to Vercel.
 
-## Local Development
-To view the site locally, you can use any static server. For example, if you have Python installed:
-python -m http.server 8000
-
-Then open `http://localhost:8000` in your browser.
-
-
+1. Init git and push to GitHub
+2. Connect the repository in Vercel
+3. Deploy!
